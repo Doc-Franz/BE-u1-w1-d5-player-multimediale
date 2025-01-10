@@ -7,6 +7,10 @@ public class Immagine extends ContenutoMultimediale implements ContenutoNonRipro
         this.luminosità = luminosità;
     }
 
+    public void show(){
+        System.out.println("Immagineeeeee");
+    };
+
     public void alzaLuminosità(){
       luminosità ++;
     }

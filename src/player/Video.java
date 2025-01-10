@@ -13,7 +13,7 @@ public class Video extends ContenutoMultimediale implements ContenutoRiproducibi
     }
 
     public void play(){
-
+        System.out.println("Videoooooooo");
     };
 
     public void alzaVolume(){

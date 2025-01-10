@@ -92,23 +92,58 @@ public class Main {
                 }
 
                 case "1": {
-                    contenutiMultimediali[0].info();
+                    if(contenutiMultimediali[0] instanceof Registrazione){
+                        ((Registrazione) contenutiMultimediali[0]).play();
+                    } else if (contenutiMultimediali[0] instanceof Video) {
+                        ((Video) contenutiMultimediali[0]).play();
+                    }
+                    else {
+                        ((Immagine) contenutiMultimediali[0]).show();
+                    }
                     break;
                 }
                 case "2": {
-                    contenutiMultimediali[1].info();
+                    if(contenutiMultimediali[1] instanceof Registrazione){
+                        ((Registrazione) contenutiMultimediali[1]).play();
+                    } else if (contenutiMultimediali[1] instanceof Video) {
+                        ((Video) contenutiMultimediali[1]).play();
+                    }
+                    else {
+                        ((Immagine) contenutiMultimediali[1]).show();
+                    }
                     break;
                 }
                 case "3": {
-                    contenutiMultimediali[2].info();
+                    if(contenutiMultimediali[2] instanceof Registrazione){
+                        ((Registrazione) contenutiMultimediali[2]).play();
+                    } else if (contenutiMultimediali[2] instanceof Video) {
+                        ((Video) contenutiMultimediali[2]).play();
+                    }
+                    else {
+                        ((Immagine) contenutiMultimediali[2]).show();
+                    }
                     break;
                 }
                 case "4": {
-                    contenutiMultimediali[3].info();
+                    if(contenutiMultimediali[3] instanceof Registrazione){
+                        ((Registrazione) contenutiMultimediali[3]).play();
+                    } else if (contenutiMultimediali[3] instanceof Video) {
+                        ((Video) contenutiMultimediali[3]).play();
+                    }
+                    else {
+                        ((Immagine) contenutiMultimediali[3]).show();
+                    }
                     break;
                 }
                 case "5": {
-                    contenutiMultimediali[4].info();
+                    if(contenutiMultimediali[4] instanceof Registrazione){
+                        ((Registrazione) contenutiMultimediali[4]).play();
+                    } else if (contenutiMultimediali[4] instanceof Video) {
+                        ((Video) contenutiMultimediali[4]).play();
+                    }
+                    else {
+                        ((Immagine) contenutiMultimediali[4]).show();
+                    }
                     break;
                 }
 
