@@ -8,7 +8,7 @@ public class Immagine extends ContenutoMultimediale implements ContenutoNonRipro
     }
 
     public void show(){
-        System.out.println("Immagineeeeee");
+        System.out.println(getTitolo() + " " + "*".repeat(luminosità));
     };
 
     public void alzaLuminosità(){

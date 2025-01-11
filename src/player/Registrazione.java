@@ -11,7 +11,8 @@ public class Registrazione extends ContenutoMultimediale implements ContenutoRip
     }
 
     public void play(){
-        System.out.println("Registrazioneee");
+        for (int i = 0; i < durata; i++){
+        System.out.println(getTitolo() + " " + "!".repeat(volume));}
     };
 
     public void alzaVolume(){
