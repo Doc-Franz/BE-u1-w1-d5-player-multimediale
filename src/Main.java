@@ -82,209 +82,71 @@ public class Main {
 
     public static void leggiContenuto(){
 
-
+        int contenutoSelezionato; // variabile che salva l'elemento selezinato nell'array
 
         while(riproduzionePlayer) {
+
             System.out.print("Che contenuto multimediale vuoi riprodurre? Scegli un numero da 1 a 5 oppure 0 per uscire: ");
-            switch (sc.nextLine()) {
-                case "0": {
+            contenutoSelezionato = Integer.parseInt(sc.nextLine());
+            switch (contenutoSelezionato) {
+                case 0: {
                     System.out.println("Chiusura del player multimediale...");
                     riproduzionePlayer = false;
                     break;
                 }
 
-                case "1": {
+                case 1: {
                     if(contenutiMultimediali[0] instanceof Registrazione){
-                        System.out.print("Vuoi alzare il volume? '+' per alzare, '-' per abbassare, 'invio' per non fare nulla e visualizzare il contenuto: ");
-                        String input = sc.nextLine(); //qui salvo le azioni che l'utente vuole compiere
-                        if (input.equals("+")){
-                            ((Registrazione) contenutiMultimediali[0]).alzaVolume();
-                        } else if (input.equals("-")) {
-                            ((Registrazione) contenutiMultimediali[0]).abbassaVolume();
-                        }
-                        ((Registrazione) contenutiMultimediali[0]).play();
+                        gestisciRegistrazione(contenutoSelezionato);
                     } else if (contenutiMultimediali[0] instanceof Video) {
-                        System.out.print("Vuoi alzare il volume? '+' per alzare, '-' per abbassare, 'invio' per non fare nulla: ");
-                        String input = sc.nextLine(); //qui salvo le azioni che l'utente vuole compiere
-                        if (input.equals("+")){
-                            ((Video) contenutiMultimediali[0]).alzaVolume();
-                        } else if (input.equals("-")) {
-                            ((Video) contenutiMultimediali[0]).abbassaVolume();
-                        }
-                        System.out.print("Vuoi alzare la luminosità? '+' per alzare, '-' per abbassare, 'invio' per non fare nulla e visualizzare il contenuto: ");
-                        input = sc.nextLine();
-                        if (input.equals("+")){
-                            ((Video) contenutiMultimediali[0]).alzaLuminosità();
-                        } else if (input.equals("-")) {
-                            ((Video) contenutiMultimediali[0]).abbassaLuminosità();
-                        }
-                        ((Video) contenutiMultimediali[0]).play();
+                        gestisciVideo(contenutoSelezionato);
                     }
                     else {
-                        System.out.print("Vuoi alzare la luminosità? '+' per alzare, '-' per abbassare, 'invio' per non fare nulla e visualizzare il contenuto: ");
-                        String input = sc.nextLine(); //qui salvo le azioni che l'utente vuole compiere
-                        if (input.equals("+")){
-                            ((Video) contenutiMultimediali[0]).alzaLuminosità();
-                        } else if (input.equals("-")) {
-                            ((Video) contenutiMultimediali[0]).abbassaLuminosità();
-                        }
-                        ((Immagine) contenutiMultimediali[0]).show();
+                        gestisciImmagine(contenutoSelezionato);
                     }
                     break;
                 }
-                case "2": {
+                case 2: {
                     if(contenutiMultimediali[1] instanceof Registrazione){
-                        System.out.print("Vuoi alzare il volume? '+' per alzare, '-' per abbassare, 'invio' per non fare nulla e visualizzare il contenuto: ");
-                        String input = sc.nextLine(); //qui salvo le azioni che l'utente vuole compiere
-                        if (input.equals("+")){
-                            ((Registrazione) contenutiMultimediali[1]).alzaVolume();
-                        } else if (input.equals("-")) {
-                            ((Registrazione) contenutiMultimediali[1]).abbassaVolume();
-                        }
-                        ((Registrazione) contenutiMultimediali[1]).play();
+                        gestisciRegistrazione(contenutoSelezionato);
                     } else if (contenutiMultimediali[1] instanceof Video) {
-                        System.out.print("Vuoi alzare il volume? '+' per alzare, '-' per abbassare, 'invio' per non fare nulla: ");
-                        String input = sc.nextLine(); //qui salvo le azioni che l'utente vuole compiere
-                        if (input.equals("+")){
-                            ((Video) contenutiMultimediali[1]).alzaVolume();
-                        } else if (input.equals("-")) {
-                            ((Video) contenutiMultimediali[1]).abbassaVolume();
-                        }
-                        System.out.print("Vuoi alzare la luminosità? '+' per alzare, '-' per abbassare, 'invio' per non fare nulla e visualizzare il contenuto: ");
-                        input = sc.nextLine();
-                        if (input.equals("+")){
-                            ((Video) contenutiMultimediali[1]).alzaLuminosità();
-                        } else if (input.equals("-")) {
-                            ((Video) contenutiMultimediali[1]).abbassaLuminosità();
-                        }
-                        ((Video) contenutiMultimediali[1]).play();
+                        gestisciVideo(contenutoSelezionato);
                     }
                     else {
-                        System.out.print("Vuoi alzare la luminosità? '+' per alzare, '-' per abbassare, 'invio' per non fare nulla e visualizzare il contenuto: ");
-                        String input = sc.nextLine(); //qui salvo le azioni che l'utente vuole compiere
-                        if (input.equals("+")){
-                            ((Video) contenutiMultimediali[1]).alzaLuminosità();
-                        } else if (input.equals("-")) {
-                            ((Video) contenutiMultimediali[1]).abbassaLuminosità();
-                        }
-                        ((Immagine) contenutiMultimediali[1]).show();
+                        gestisciImmagine(contenutoSelezionato);
                     }
                     break;
                 }
-                case "3": {
+                case 3: {
                     if(contenutiMultimediali[2] instanceof Registrazione){
-                        System.out.print("Vuoi alzare il volume? '+' per alzare, '-' per abbassare, 'invio' per non fare nulla e visualizzare il contenuto: ");
-                        String input = sc.nextLine(); //qui salvo le azioni che l'utente vuole compiere
-                        if (input.equals("+")){
-                            ((Registrazione) contenutiMultimediali[2]).alzaVolume();
-                        } else if (input.equals("-")) {
-                            ((Registrazione) contenutiMultimediali[2]).abbassaVolume();
-                        }
-                        ((Registrazione) contenutiMultimediali[2]).play();
+                        gestisciRegistrazione(contenutoSelezionato);
                     } else if (contenutiMultimediali[2] instanceof Video) {
-                        System.out.print("Vuoi alzare il volume? '+' per alzare, '-' per abbassare, 'invio' per non fare nulla: ");
-                        String input = sc.nextLine(); //qui salvo le azioni che l'utente vuole compiere
-                        if (input.equals("+")){
-                            ((Video) contenutiMultimediali[2]).alzaVolume();
-                        } else if (input.equals("-")) {
-                            ((Video) contenutiMultimediali[2]).abbassaVolume();
-                        }
-                        System.out.print("Vuoi alzare la luminosità? '+' per alzare, '-' per abbassare, 'invio' per non fare nulla e visualizzare il contenuto: ");
-                        input = sc.nextLine();
-                        if (input.equals("+")){
-                            ((Video) contenutiMultimediali[2]).alzaLuminosità();
-                        } else if (input.equals("-")) {
-                            ((Video) contenutiMultimediali[2]).abbassaLuminosità();
-                        }
-                        ((Video) contenutiMultimediali[2]).play();
+                        gestisciVideo(contenutoSelezionato);
                     }
                     else {
-                        System.out.print("Vuoi alzare la luminosità? '+' per alzare, '-' per abbassare, 'invio' per non fare nulla e visualizzare il contenuto: ");
-                        String input = sc.nextLine(); //qui salvo le azioni che l'utente vuole compiere
-                        if (input.equals("+")){
-                            ((Video) contenutiMultimediali[2]).alzaLuminosità();
-                        } else if (input.equals("-")) {
-                            ((Video) contenutiMultimediali[2]).abbassaLuminosità();
-                        }
-                        ((Immagine) contenutiMultimediali[2]).show();
+                        gestisciImmagine(contenutoSelezionato);
                     }
                     break;
                 }
-                case "4": {
+                case 4: {
                     if(contenutiMultimediali[3] instanceof Registrazione){
-                        System.out.print("Vuoi alzare il volume? '+' per alzare, '-' per abbassare, 'invio' per non fare nulla e visualizzare il contenuto: ");
-                        String input = sc.nextLine(); //qui salvo le azioni che l'utente vuole compiere
-                        if (input.equals("+")){
-                            ((Registrazione) contenutiMultimediali[3]).alzaVolume();
-                        } else if (input.equals("-")) {
-                            ((Registrazione) contenutiMultimediali[3]).abbassaVolume();
-                        }
-                        ((Registrazione) contenutiMultimediali[3]).play();
+                        gestisciRegistrazione(contenutoSelezionato);
                     } else if (contenutiMultimediali[3] instanceof Video) {
-                        System.out.print("Vuoi alzare il volume? '+' per alzare, '-' per abbassare, 'invio' per non fare nulla: ");
-                        String input = sc.nextLine(); //qui salvo le azioni che l'utente vuole compiere
-                        if (input.equals("+")){
-                            ((Video) contenutiMultimediali[3]).alzaVolume();
-                        } else if (input.equals("-")) {
-                            ((Video) contenutiMultimediali[3]).abbassaVolume();
-                        }
-                        System.out.print("Vuoi alzare la luminosità? '+' per alzare, '-' per abbassare, 'invio' per non fare nulla e visualizzare il contenuto: ");
-                        input = sc.nextLine();
-                        if (input.equals("+")){
-                            ((Video) contenutiMultimediali[3]).alzaLuminosità();
-                        } else if (input.equals("-")) {
-                            ((Video) contenutiMultimediali[3]).abbassaLuminosità();
-                        }
-                        ((Video) contenutiMultimediali[3]).play();
+                        gestisciVideo(contenutoSelezionato);
                     }
                     else {
-                        System.out.print("Vuoi alzare la luminosità? '+' per alzare, '-' per abbassare, 'invio' per non fare nulla e visualizzare il contenuto: ");
-                        String input = sc.nextLine(); //qui salvo le azioni che l'utente vuole compiere
-                        if (input.equals("+")){
-                            ((Video) contenutiMultimediali[3]).alzaLuminosità();
-                        } else if (input.equals("-")) {
-                            ((Video) contenutiMultimediali[3]).abbassaLuminosità();
-                        }
-                        ((Immagine) contenutiMultimediali[3]).show();
+                        gestisciImmagine(contenutoSelezionato);
                     }
                     break;
                 }
-                case "5": {
+                case 5: {
                     if(contenutiMultimediali[4] instanceof Registrazione){
-                        System.out.print("Vuoi alzare il volume? '+' per alzare, '-' per abbassare, 'invio' per non fare nulla e visualizzare il contenuto: ");
-                        String input = sc.nextLine(); //qui salvo le azioni che l'utente vuole compiere
-                        if (input.equals("+")){
-                            ((Registrazione) contenutiMultimediali[4]).alzaVolume();
-                        } else if (input.equals("-")) {
-                            ((Registrazione) contenutiMultimediali[4]).abbassaVolume();
-                        }
-                        ((Registrazione) contenutiMultimediali[4]).play();
+                        gestisciRegistrazione(contenutoSelezionato);
                     } else if (contenutiMultimediali[4] instanceof Video) {
-                        System.out.print("Vuoi alzare il volume? '+' per alzare, '-' per abbassare, 'invio' per non fare nulla: ");
-                        String input = sc.nextLine(); //qui salvo le azioni che l'utente vuole compiere
-                        if (input.equals("+")){
-                            ((Video) contenutiMultimediali[4]).alzaVolume();
-                        } else if (input.equals("-")) {
-                            ((Video) contenutiMultimediali[4]).abbassaVolume();
-                        }
-                        System.out.print("Vuoi alzare la luminosità? '+' per alzare, '-' per abbassare, 'invio' per non fare nulla e visualizzare il contenuto: ");
-                        input = sc.nextLine();
-                        if (input.equals("+")){
-                            ((Video) contenutiMultimediali[4]).alzaLuminosità();
-                        } else if (input.equals("-")) {
-                            ((Video) contenutiMultimediali[4]).abbassaLuminosità();
-                        }
-                        ((Video) contenutiMultimediali[4]).play();
+                        gestisciVideo(contenutoSelezionato);
                     }
                     else {
-                        System.out.print("Vuoi alzare la luminosità? '+' per alzare, '-' per abbassare, 'invio' per non fare nulla e visualizzare il contenuto: ");
-                        String input = sc.nextLine(); //qui salvo le azioni che l'utente vuole compiere
-                        if (input.equals("+")){
-                            ((Video) contenutiMultimediali[4]).alzaLuminosità();
-                        } else if (input.equals("-")) {
-                            ((Video) contenutiMultimediali[4]).abbassaLuminosità();
-                        }
-                        ((Immagine) contenutiMultimediali[4]).show();
+                        gestisciImmagine(contenutoSelezionato);
                     }
                     break;
                 }
@@ -296,6 +158,51 @@ public class Main {
         }
     }
 
+    //funzione che gestisce la regolazione dei valori di registrazione e la sua stampa a video
+    public static void gestisciRegistrazione(int contenutoSelezionato){
+        System.out.print("Vuoi alzare il volume? '+' per alzare, '-' per abbassare, 'invio' per non fare nulla e visualizzare il contenuto: ");
+        String input = sc.nextLine(); //qui salvo le azioni che l'utente vuole compiere
+        if (input.equals("+")){
+            ((Registrazione) contenutiMultimediali[contenutoSelezionato - 1]).alzaVolume();
+        } else if (input.equals("-")) {
+            ((Registrazione) contenutiMultimediali[contenutoSelezionato - 1]).abbassaVolume();
+        }
+        ((Registrazione) contenutiMultimediali[contenutoSelezionato - 1]).play();
+
+    }
+
+    //funzione che gestisce la regolazione dei valori di video e la sua stampa a video
+    public static void gestisciVideo(int contenutoSelezionato){
+        System.out.print("Vuoi alzare il volume? '+' per alzare, '-' per abbassare, 'invio' per non fare nulla: ");
+        String input = sc.nextLine(); //qui salvo le azioni che l'utente vuole compiere
+        if (input.equals("+")){
+            ((Video) contenutiMultimediali[contenutoSelezionato - 1]).alzaVolume();
+        } else if (input.equals("-")) {
+            ((Video) contenutiMultimediali[contenutoSelezionato - 1]).abbassaVolume();
+        }
+        System.out.print("Vuoi alzare la luminosità? '+' per alzare, '-' per abbassare, 'invio' per non fare nulla e visualizzare il contenuto: ");
+        input = sc.nextLine();
+        if (input.equals("+")){
+            ((Video) contenutiMultimediali[contenutoSelezionato - 1]).alzaLuminosità();
+        } else if (input.equals("-")) {
+            ((Video) contenutiMultimediali[contenutoSelezionato - 1]).abbassaLuminosità();
+        }
+        ((Video) contenutiMultimediali[contenutoSelezionato - 1]).play();
+    }
+
+    //funzione che gestisce la regolazione dei valori di immagine e la sua stampa a video
+    public static void gestisciImmagine(int contenutoSelezionato){
+        System.out.print("Vuoi alzare la luminosità? '+' per alzare, '-' per abbassare, 'invio' per non fare nulla e visualizzare il contenuto: ");
+        String input = sc.nextLine(); //qui salvo le azioni che l'utente vuole compiere
+        if (input.equals("+")){
+            ((Video) contenutiMultimediali[contenutoSelezionato - 1]).alzaLuminosità();
+        } else if (input.equals("-")) {
+            ((Video) contenutiMultimediali[contenutoSelezionato - 1]).abbassaLuminosità();
+        }
+        ((Immagine) contenutiMultimediali[contenutoSelezionato - 1]).show();
+    }
+
+    //funzione che gestisce l'aggiunta delle registrazioni nell'array iniziale
     public static void aggiungiRegistrazione(ContenutoMultimediale r){
         for (int i = 0; i < contenutiMultimediali.length; i++) {
             if (contenutiMultimediali[i] == null) {
@@ -306,6 +213,7 @@ public class Main {
         }
     }
 
+    //funzione che gestisce l'aggiunta dei video nell'array iniziale
     public static void aggiungiVideo(ContenutoMultimediale v){
         for (int i = 0; i < contenutiMultimediali.length; i++) {
             if (contenutiMultimediali[i] == null) {
@@ -316,6 +224,7 @@ public class Main {
         }
     }
 
+    //funzione che gestisce l'aggiunta delle immagini nell'array iniziale
     public static void aggiungiImmagine(ContenutoMultimediale p){
         for (int i = 0; i < contenutiMultimediali.length; i++) {
             if (contenutiMultimediali[i] == null) {
